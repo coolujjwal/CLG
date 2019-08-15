@@ -1,0 +1,108 @@
+@font-face{
+    font-family: leagueSpartan;
+    src: url(fonts/leagueSpartan.woff);
+}
+@font-face{
+    font-family: glacialIndifferance;
+    src: url(fonts/glacialIndifference.woff);
+}
+
+body{
+    background-color: black;
+}
+
+.nav1{
+    background-color: #003262;
+}
+
+.nav1 a{
+    font-size: 12px;
+    color: #f2f2f2;
+    font-family: helvetica;
+}
+
+.nav1 a:hover{
+    color: orange;
+}
+
+.nav1 span{
+    color: #f2f2f2;
+}
+
+.nav2{
+    background-color: white;
+}
+
+.nav2 img{
+    height: 70px;
+}
+
+.nav2 li{
+    margin-right: 0px;
+}
+
+.nav2 a{
+    color: #003262 !important;
+    font-family: glacialIndifferance;
+}
+
+.line{
+    height: 3px;
+    background-color: #003262;
+}
+
+.bg{
+    background-image: url("images/bg2.png");
+    background-size: cover;
+    height: 90%;
+    width: 100%;
+    position: absolute;
+    padding-top: 150px;
+    margin: 0;
+
+}
+
+.film{
+    background-color: black;
+    height: 90%;
+    width: 100%;
+    position: absolute;
+    padding-top: 150px;
+    margin: 0;
+    z-index: 5;
+    opacity: 0.1;
+
+}
+
+.bg img{
+    height: 200px;
+}
+
+.bg h1{
+    color: white;
+    font-size: 80px;
+    font-family: leagueSpartan;
+}
+
+.bg h2{
+    color: white;
+    font-size: 30px;
+    font-family: glacialIndifferance;
+}
+.bg p{
+    color: white;
+    font-size: 20px;
+    position: relative;
+    top: 100px;
+    font-family: glacialIndifferance;
+
+}
+
+.aboutContent{
+    opacity: 1;
+    z-index: 20 !important;
+}
+.about{
+    opacity: 1;
+    z-index: 20  !important;
+}
