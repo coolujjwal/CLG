@@ -1,10 +1,10 @@
 @font-face{
     font-family: leagueSpartan;
-    src: url(fonts/leagueSpartan.woff);
+    src: url(leagueSpartan.woff);
 }
 @font-face{
     font-family: glacialIndifferance;
-    src: url(fonts/glacialIndifference.woff);
+    src: url(glacialIndifference.woff);
 }
 
 body{
