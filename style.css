@@ -52,7 +52,7 @@ body{
 }
 
 .bg{
-    background-image: url("images/bg2.png");
+    background-image: url("bg2.png");
     background-size: cover;
     height: 90%;
     width: 100%;
