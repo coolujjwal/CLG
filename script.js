@@ -4,13 +4,15 @@ $(document).ready(function(){
     $(".film").mouseenter(function(){
     },
     function(){
-        $(".aboutContent").fadeIn(2000);
+        $(".aboutContent").fadeOut(1000);
+        $(".aboutContent").fadeIn(1000);
+        $(".aboutContent").slideIn(1000);
     })
     
     $(".film").mouseenter(function(){
     },
     function(){
-        $(".film").animate({opacity:0.8}, 1500);
+        $(".film").animate({opacity:0.75}, 1500);
     })
     
 
