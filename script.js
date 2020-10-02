@@ -12,7 +12,7 @@ $(document).ready(function(){
     $(".film").mouseenter(function(){
     },
     function(){
-        $(".film").animate({opacity:0.75}, 1500);
+        $(".film").animate({opacity:0.74}, 1500);
     })
     
 
