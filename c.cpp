@@ -2,7 +2,7 @@
 #include <bits/stdc++.h>
 
 using namespace std;
-
+#define MAXX 100005;
 #define ll long long int
 #define ld long double
 #define SIZE 1000001
