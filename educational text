@@ -1,0 +1,97 @@
+#include<bits/stdc++.h>
+using namespace std;
+typedef pair<long long int,long long int> pa;
+//#define resize(A) A.resize(unique(A.begin(), A.end()) - A.begin())
+//ios_base::sync_with_stdio(false);cin.tie(NULL);
+/*ifstream cin("input.txt");
+ofstream cout("output.txt");*/
+#define pb push_back
+#define  MAX 1000009
+#define ll long long int
+long long int mod=998244353;
+long long int MOD=1e9+7;
+long long int INF=1e18;
+ll dx[]={1,-1,0,0};
+ll dy[]={0,0,1,-1};
+struct segtree
+{
+	ll size;
+	vector<ll> sums;
+	void init(ll n)
+	{
+		size=1;
+		while(size<n)
+		size*=2;
+		sums.resize(2*size,0);
+	}
+	void set(ll i,ll v,ll x,ll lx,ll rx)
+	{
+		if(rx-lx==1)
+		{
+			sums[x]=v;
+			return;
+		}
+		ll m=(lx+rx)/2;
+		if(i<m)
+		set(i,v,2*x+1,lx,m);
+		else
+		set(i,v,2*x+2,m,rx);
+		sums[x]=sums[2*x+1]+sums[2*x+2];
+	}
+	void set(ll i,ll v)
+	{
+		set(i,v,0,0,size);
+	}
+	ll cal(ll l,ll r,ll x,ll lx,ll rx)
+	{
+		if(r<=lx||l>=rx)
+		return 0;
+		if(l<=lx&&r>=rx)
+		return sums[x];
+		ll m=(lx+rx)/2;
+		ll lr=cal(l,r,2*x+1,lx,m);
+		ll rr=cal(l,r,2*x+2,m,rx);
+		return lr+rr;
+	}
+	ll cal(ll l,ll r)
+	{
+		return cal(l,r,0,0,size);
+	}
+};
+int main()
+{
+    ios_base::sync_with_stdio(false);cin.tie(NULL);
+	ll n;
+	cin>>n;
+	string s;
+	cin>>s;
+	vector<ll> idx[26];
+	vector<ll> idx1[26];
+	string s1=s;
+	reverse(s1.begin(),s1.end());
+	for(int i=0;i<n;i++)
+	{
+		idx[s[i]-'a'].pb(i+1);
+		idx1[s1[i]-'a'].pb(i+1);
+	}
+	vector<ll> p(n);
+	for(int i=0;i<26;i++)
+	{
+		for(int j=0;j<idx[i].size();j++)
+		{
+			p[idx[i][j]-1]=idx1[i][j];
+		}
+	}
+	
+	segtree st;
+	st.init(n);
+	ll ans=0;
+	
+	for(auto j:p)
+	{
+		ans+=st.cal(j,n);
+		st.set(j-1,1);
+	}
+	cout<<ans;
+	return 0;
+}
