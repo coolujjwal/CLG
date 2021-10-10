@@ -44,6 +44,7 @@ int main(){
     for(int i = 0;i<10000000;i++)
     {
     	ll t;
+        ll x;
     	ll a[100000];
     }
     for(int i = 0;i<10000000;i++)
