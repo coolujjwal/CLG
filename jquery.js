@@ -45,11 +45,11 @@
 // enough that all such attempts are guarded in a try block.
 "use strict";
 
-var arr = [];
+const arr = [];
 
-var document = window.document;
+const document = window.document;
 
-var getProto = Object.getPrototypeOf;
+const getProto = Object.getPrototypeOf;
 
 var slice = arr.slice;
 
