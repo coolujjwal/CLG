@@ -53,6 +53,7 @@ int main()
     {
         int a,b,w;
         cin>>a>>b>>w;
+        // here w is weight between a and b;
         adj[a].pb({w,b});
         adj[b].pb({w,a});
     }
@@ -68,5 +69,7 @@ int main()
         else
             cout<<dis[i]<<" ";
     }cout<<endl;}
+    cout << endl;
+    cout << endl;
     return 0;
 }
