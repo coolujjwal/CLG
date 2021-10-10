@@ -13,51 +13,7 @@ long long int MOD=1e9+7;
 long long int INF=1e18;
 ll dx[]={1,-1,0,0};
 ll dy[]={0,0,1,-1};
-struct segtree
-{
-	ll size;
-	vector<ll> sums;
-	void init(ll n)
-	{
-		size=1;
-		while(size<n)
-		size*=2;
-		sums.resize(2*size,0);
-	}
-	void set(ll i,ll v,ll x,ll lx,ll rx)
-	{
-		if(rx-lx==1)
-		{
-			sums[x]=v;
-			return;
-		}
-		ll m=(lx+rx)/2;
-		if(i<m)
-		set(i,v,2*x+1,lx,m);
-		else
-		set(i,v,2*x+2,m,rx);
-		sums[x]=sums[2*x+1]+sums[2*x+2];
-	}
-	void set(ll i,ll v)
-	{
-		set(i,v,0,0,size);
-	}
-	ll cal(ll l,ll r,ll x,ll lx,ll rx)
-	{
-		if(r<=lx||l>=rx)
-		return 0;
-		if(l<=lx&&r>=rx)
-		return sums[x];
-		ll m=(lx+rx)/2;
-		ll lr=cal(l,r,2*x+1,lx,m);
-		ll rr=cal(l,r,2*x+2,m,rx);
-		return lr+rr;
-	}
-	ll cal(ll l,ll r)
-	{
-		return cal(l,r,0,0,size);
-	}
-};
+
 int main()
 {
     ios_base::sync_with_stdio(false);cin.tie(NULL);
