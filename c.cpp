@@ -96,7 +96,8 @@ int main(){
             }
         }
         ll xi = sqrt(primesq[si]);
-        cout << nprime[n] - nprime[xi] + 1 << endl;
+        int ans = nprime[n] - nprime[xi] + 1;
+        cout << "ans = " << ans << endl;
     }
 
 }
